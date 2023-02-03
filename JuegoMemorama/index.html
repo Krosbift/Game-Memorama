@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- meta datos -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- acceso para los archivos externos -->
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="main.js" defer></script>
+    <!-- detalles de la pestaña -->
+    <link type="image/x-icon" rel="shortcut icon" href="./img/favicon.ico">
+    <title>Armemos el Pesebre de Navidad</title>
+</head>
+
+<body class="body">
+    <!-- modal intro -->
+    <!-- Ventana modal -->
+    <div class="dialog-modal" id="contenedor"> <!-- Div para la parte exterior de la ventana -->
+        <div class="container-modal"> <!-- Contenedor de la ventana modal -->
+            <div class="content-modal fade-in-down"> <!-- Ventana -->
+                <div class="content-column"> <!-- Contenedor de columnas -->
+                    <div class="column1"> <!-- Columna que tendrá la pesebre y sus personajes -->
+                        <!-- Imagenes de los personajes -->
+                        <img src="img/baltazar.png" id="baltazar">
+                        <img src="img/gaspar.png" id="gaspar">
+                        <img src="img/melchor.png" id="melchor">
+                        <img src="img/pastor.png" id="pastor">
+                        <img src="img/jose.png" id="jose">
+                        <img src="img/maria.png" id="maria">
+                        <img src="img/jesus.png" id="jesus">
+                        <img src="img/mula-buey.png" id="mula-buey">
+                    </div>
+                    <div class="column2"> <!-- Columna que tendrá el texto de la ventana -->
+                        <h2 id="modal_titulo">Sabias que...</h2>
+                        <div id="modal_texto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et veritatis similique illum
+                                illo labore laboriosam magnam id repellendus voluptatibus facilis, minima dolor
+                                reiciendis neque nostrum sapiente eveniet cumque recusandae quidem?</p>
+                        </div>
+                        <img src="img/copo.png" class="copo1">
+                        <img src="img/copo.png" class="copo2">
+                        <input type="submit" id="btn-cerrar" onclick="cerrarModal() , stopper()" value="Continuar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de ventana modal -->
+
+    <!-- Div para la parte exterior de la ventana del modal final -->
+    <div class="final-modal fade-in-down" id="final-contenedor"> <!-- Div para la parte exterior de la ventana -->
+	<!-- Contenedor de la ventana modal -->     
+	<div id="container-final" class="container-modal"> 
+	<!-- Contenedor de la ventana modal -->
+            <div class="content-modal fade-in-down"> 
+		<!-- Contenedor de columnas -->
+                <div class="content-windown">
+		<!-- Columna que tendrá la imagen del pesebre-->
+                    <div class="column1"></div>
+	<!-- Columna que tendrá el texto de la ventana -->
+                    <div class="column2">
+                        <h2 class="final_modal_titulo">Armaste tu pesebre</h2>
+                        <div class="win_text">
+                            <p>Y junto con la esperanza de la llegada del Niño Dios te deseamos de todo corazón que ese
+                                regalo que tanto has anhelado llegue a ti en esta navidad.</p>
+                            <p>Felices fiestas te desea:</p>
+                            <img class="img-escuela" src="./img/logoEscuelDidactica.png">
+                        </div>
+                        <!-- Ingresar el volver a intentar -->
+                        <input type="submit" id="btn-reiniciar" onclick="gamegenerate(), cerrarModalFinal()" value="Volver a intentar">
+                    </div>
+                </div>
+		<!-- Contiene el pie de la ventana y sus iconos -->
+                <div class="footer_ventana">
+                    <div class="footer_ventana_redes">Compartir</div>
+                    <a href="#" target="_blank" class="btn.twitter"><img src="./img/twitter.svg"
+                            title="Compartir en twitter"></a>
+                    <a href="#" target="_blank" class="btn.twitter"><img src="./img/facebook.svg"
+                            title="Compartir en facebook"></a>
+                    <a href="#" target="_blank" class="btn.twitter"><img src="./img/linkedin.svg"
+                            title="Compartir en linkedin"></a>
+                    <img src="./img/link.svg" title="Compartir en Linkedin">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de ventana modal -->
+    <audio id="audio-intro" src="./audio/intro.mp3"></audio>
+
+    <!-- fondo del modal de inicio -->
+    <div class="background"></div>
+    <!-- Div para el del modal de inicio -->
+    <div class="pop-up">
+        <!-- imagen del modal -->
+        <img src="./img/modal-intro.png">
+        <!-- boton para comenzar  -->
+        <button class="button">Comenzar</button>
+    </div>
+
+    <!-- contenido principal -->
+    <main id="global">
+        <!-- header -->
+        <div>
+            <!-- titulo o nombre de la pagina -->
+            <header><img src="img/logoEscuelDidactica.png" alt="logo"></header>
+            <!-- descripcion del contenido de la web -->
+            <div class="description">
+                <!-- span como subtitulo -->
+                <span>Armemos el Pesebre de Navidad</span>
+                <!-- texto decriptivo -->
+                <p>
+                    Como es tradición cada diciembre armamos el pesebre para esperar la llegada del Niño Dios.
+                    Presiona cada
+                    tarjeta para descubrir un personaje, concéntrate y encuentra su pareja, así revelarás un
+                    personaje en el
+                    pesebre y descubrirás un dato curioso sobre esta tradición de navidad.
+                </p>
+            </div>
+        </div>
+        <!-- juego de memoria -->
+        <div class="background-game">
+            <!-- tablero -->
+            <div id="game">
+                <!-- ejemplo de como se crean las cartas en el JavaScript
+                        <div class="card-area" onclick="selectcard(${i})">
+                            <div class="card" id="card${i}">
+                                <div class="rear face" id="rear${i}">${images[0]}</div>
+                                <div class="top face"><img src="./img/tarjeta_cubierta.png" alt=""></div>
+                            </div>
+                        </div>`
+                -->
+            </div>
+        </div>
+        <!-- footer para las paginas con un tamaño menor a los 768px -->
+        <footer class="footer-movil">
+            <!-- links -->
+            <div class="links">
+                <!-- texto de compartir -->
+                <span>Compartir</span>
+                <!-- lista de iconos -->
+                <ul class="links_ico">
+                    <li><a href="#"><img src="./img/sharedTwitter.png"></a></li>
+                    <li><a href="#"><img src="./img/sharedFacebook.png"></a></li>
+                    <li><a href="#"><img src="./img/sharedLinkedin.png"></a></li>
+                    <li><a href="#"><img src="./img/sharedWhastApp.png"></a></li>
+                    <li><a href="#"><img src="./img/shared.png"></a></li>
+                </ul>
+            </div>
+            <!-- contenedor para un texto -->
+            <div class="help">
+                <p>Somos <a href="#"><img src="./img/logoEscuelDidactica.png"></a> y te ayudamos a transformar el
+                    aprendizaje
+                    en experiencias memorables</p>
+            </div>
+        </footer>
+        <div class="links_fixed-movil">
+            <div class="links_fixed_left">
+                <span>Síguenos</span>
+                <ul class="links_fixed_left_networks">
+                    <li><a href="#"><img src="./img/facebookED.png"></a></li>
+                    <li><a href="#"><img src="./img/instagramED.png"></a></li>
+                    <li><a href="#"><img src="./img/linkedinED.png"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- footer para las paginas con un tamaño mayor a los 769px -->
+        <footer class="footer-desktop">
+            <!-- div para centrar su contenido -->
+            <div class="text">
+                <!-- contenido -->
+                <span>Somos <img src="./img/logoEscuelDidactica.png">y te ayudamos a transformar el aprendizaje en
+                    experiencia memorables.</span>
+            </div>
+            <!-- redes -->
+            <div class="networks">
+                <!-- iconos de la redes -->
+                <div class="icons">
+                    <!-- texto -->
+                    <span>Síguenos</span>
+                    <!-- imagenes y direccion mas boton -->
+                    <a href="#"><img src="./img/facebookED.png" class="icon"></a>
+                    <a href="#"><img src="./img/instagramED.png" class="icon"></a>
+                    <a href="#"><img src="./img/linkedinED.png" class="icon"></a>
+                    <button type="submit">Contáctanos</button>
+                </div>
+            </div>
+        </footer>
+        <!-- iconos laterales solo mostrados en pantallas de un tamaño superior a los 769px-->
+        <div class="icon-container-desktop">
+            <!-- direccion y acceso -->
+            <a href="#"><img src="./img/sharedTwitter.png"></a>
+            <a href="#"><img src="./img/sharedFacebook.png"></a>
+            <a href="#"><img src="./img/sharedLinkedin.png"></a>
+            <a href="#"><img src="./img/shared.png"></a>
+        </div>
+    </main>
+
+    <!-- audios usados en la web -->
+    <div>
+        <audio id="audio-intro" src="./audio/intro.mp3"></audio>
+        <audio src="./audio/correcta.mp3" id="correcta"></audio>
+        <audio src="./audio/incorrecta.mp3" id="incorrecta"></audio>
+        <audio src="./audio/pareja1.mp3" id="pair1"></audio>
+        <audio src="./audio/pareja2.mp3" id="pair2"></audio>
+        <audio src="./audio/pareja3.mp3" id="pair3"></audio>
+        <audio src="./audio/pareja4.mp3" id="pair4"></audio>
+        <audio src="./audio/pareja5.mp3" id="pair5"></audio>
+        <audio src="./audio/pareja6.mp3" id="pair6"></audio>
+        <audio src="./audio/pareja7.mp3" id="pair7"></audio>
+        <audio src="./audio/pareja8.mp3" id="pair8"></audio>
+        <audio src="./audio/final.mp3" id="final"></audio>
+    </div>
+</body>
+
+</html>
